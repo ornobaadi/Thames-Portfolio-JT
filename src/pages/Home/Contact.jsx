@@ -64,7 +64,7 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 py-16 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-[1520px] mx-auto">
                 <div className="text-center mb-16">
                     <Link to="/" className="play-bold text-lime-600 text-xl md:text-2xl font-medium hover:text-green-600 transition-colors">
                         Contact Me

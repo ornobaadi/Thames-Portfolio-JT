@@ -43,7 +43,7 @@ const Banner = () => {
                             Senior Web Developer and designer from heart of New York
                         </p>
                         <div>
-                            <button className="btn px-6 md:px-10 bg-lime-600 text-white btn-xl play-bold py-2 md:py-3 rounded-md text-lg md:text-xl">
+                            <button className="btn px-6 md:px-10 bg-green-500 hover:bg-green-600 text-white btn-xl play-bold py-2 md:py-3 rounded-md text-lg md:text-xl">
                                 Say Hello
                             </button>
                         </div>
