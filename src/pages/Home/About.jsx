@@ -15,7 +15,7 @@ const About = () => {
 
                 {/* Right Side: Text Content */}
                 <div className="lg:w-1/2 lg:pl-12">
-                    <h2 className="text-xl lg:text-3xl text-lime-600 font-bold mb-6 play-bold">
+                    <h2 className="text-xl lg:text-2xl text-lime-600 font-bold mb-6 play-bold">
                         About Me
                     </h2>
                     <h3 className="text-2xl lg:text-7xl mb-4 play-bold">
