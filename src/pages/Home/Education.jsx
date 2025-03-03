@@ -32,7 +32,7 @@ const Education = () => {
                     <div className="lg:w-5/12">
                         <p className="text-lime-600 text-xl md:text-2xl font-medium mb-2 play-bold">Education</p>
                         <h2 className="text-4xl md:text-7xl font-bold text-gray-800 mb-6 play-bold">My Education</h2>
-                        <p className="text-gray-600 mb-10">
+                        <p className="text-xl text-gray-600 mb-10">
                             Sed ut perspiciatis unde omnis iste natus kobita tumi sopno charini hoye
                             khbor nio na sit voluptatem accusantium dolore.
                         </p>
@@ -42,8 +42,8 @@ const Education = () => {
                             {educationData.map((item, index) => (
                                 <div key={index} className="flex">
                                     {/* Icon */}
-                                    <div className="mr-4">
-                                        <div className="w-16 h-16 bg-lime-500 rounded-md flex items-center justify-center text-white">
+                                    <div className="mr-8">
+                                        <div className="w-20 h-20 bg-lime-500 rounded-md flex items-center justify-center text-white">
                                             <FaGraduationCap size={32} />
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@ const Education = () => {
                                         <p className="text-gray-700 font-medium text-xl play-bold">
                                             {item.institution} <span className="text-gray-500 text-sm">({item.period})</span>
                                         </p>
-                                        <p className="text-gray-600 mt-2">
+                                        <p className="text-xl text-gray-600 mt-2">
                                             {item.description}
                                         </p>
                                     </div>

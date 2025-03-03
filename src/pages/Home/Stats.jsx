@@ -8,7 +8,7 @@ const Stats = () => {
     ];
 
     return (
-        <section className="w-full bg-emerald-900 py-16">
+        <section className="w-full bg-emerald-900 py-24">
             <div className="container mx-auto px-4 play-bold">
                 <div className="flex flex-col md:flex-row justify-around items-center space-y-10 md:space-y-0 md:space-x-16 lg:space-x-32">
                     {statsData.map((stat, index) => (

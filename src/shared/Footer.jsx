@@ -1,9 +1,10 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div>
+        <div className='max-w-[1520px] mx-auto'>
             <footer className="footer sm:footer-horizontal p-10">
                 <aside>
                     <img src="/logo.png" alt="" />
@@ -29,18 +30,18 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
-                        <a>
+                        <Link>
                             <Facebook />
-                        </a>
-                        <a>
+                        </Link>
+                        <Link>
                             <Twitter />
-                        </a>
-                        <a>
+                        </Link>
+                        <Link>
                             <Linkedin />
-                        </a>
-                        <a>
+                        </Link>
+                        <Link>
                             <Instagram />
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </footer>

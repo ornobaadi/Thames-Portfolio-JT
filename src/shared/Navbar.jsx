@@ -1,36 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-    const links = <>
-        <li><a>Home</a></li>
-        <li><a>About</a></li>
-        <li><a>Works</a></li>
-        <li><a>Service</a></li>
-        <li><a>Contact</a></li>
-        <li><a>Blog</a></li>
-    </>
-
+    const [scrolled, setScrolled] = useState(false);
+    
+    // Add scroll event listener
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 50;
+            if (isScrolled !== scrolled) {
+                setScrolled(isScrolled);
+            }
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        // Clean up event listener
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrolled]);
+    
     return (
-        <div className="navbar bg-base-100 play max-w-[1540px] mx-auto">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        <div className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : ''}`}>
+            <div className="max-w-[1540px] mx-auto px-4">
+                <div className="flex justify-between items-center py-4">
+                    {/* Logo */}
+                    <a href="/" className="flex items-center">
+                        <img src="/logo.png" alt="Thames" className="h-10" />
+                    </a>
+                    
+                    {/* Desktop Navigation */}
+                    <div className="hidden lg:flex space-x-8 play-bold">
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Home</a>
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>About</a>
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Works</a>
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Service</a>
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Contact</a>
+                        <a href="#" className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Blog</a>
                     </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        {links}
-                    </ul>
+                    
+                    {/* Mobile menu button */}
+                    <div className="lg:hidden">
+                        <button className={`transition-colors ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <a className="btn btn-ghost text-xl">
-                    <img src="/logo.png" alt="" />
-                </a>
-            </div>
-            <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-lg">
-                    {links}
-                </ul>
             </div>
         </div>
     );
