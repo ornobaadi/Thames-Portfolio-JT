@@ -61,9 +61,26 @@ const Education = () => {
     }, []);
 
     return (
-        <section className="py-16 px-60 bg-white">
+        <section className="py-16 px-4 md:px-8 lg:px-16 bg-white">
             <div className="container mx-auto">
                 <div className="flex flex-col lg:flex-row justify-between gap-10">
+                    {/* Right Image */}
+                    <motion.div
+                        className="lg:w-5/12 flex items-center justify-center"
+                        variants={itemVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
+                        <div className="rounded-lg overflow-hidden">
+                            <img
+                                src="https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/education-img-2.jpg"
+                                alt="Education"
+                                className="w-full object-cover"
+                            />
+                        </div>
+                    </motion.div>
+
                     {/* Left Content */}
                     <motion.div
                         className="lg:w-5/12"
@@ -118,23 +135,6 @@ const Education = () => {
                                     </div>
                                 </motion.div>
                             ))}
-                        </div>
-                    </motion.div>
-
-                    {/* Right Image */}
-                    <motion.div
-                        className="lg:w-5/12 flex items-center justify-center"
-                        variants={itemVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.5 }}
-                    >
-                        <div className="rounded-lg overflow-hidden">
-                            <img
-                                src="https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/education-img-2.jpg"
-                                alt="Education"
-                                className="w-4/5 object-cover"
-                            />
                         </div>
                     </motion.div>
                 </div>

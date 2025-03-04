@@ -33,7 +33,7 @@ const Stats = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }} // Animate only once when in view
             >
-                <div className="flex flex-col md:flex-row justify-around items-center space-y-10 md:space-y-0 md:space-x-16 lg:space-x-32">
+                <div className="flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-6 lg:space-x-12">
                     {statsData.map((stat, index) => (
                         <motion.div
                             key={index}
@@ -42,14 +42,14 @@ const Stats = () => {
                         >
                             <div className="flex items-center">
                                 <div className="flex">
-                                    <span className="text-lime-400 text-6xl md:text-7xl lg:text-8xl font-bold">
+                                    <span className="text-lime-400 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
                                         {stat.number}
                                     </span>
-                                    <span className="text-lime-400 text-4xl md:text-5xl lg:text-6xl font-bold">
+                                    <span className="text-lime-400 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                                         {stat.suffix}
                                     </span>
                                 </div>
-                                <p className="text-white text-lg md:text-4xl ml-3 mt-1 max-w-40">
+                                <p className="text-white text-sm sm:text-lg md:text-xl lg:text-2xl ml-3 mt-1 max-w-40">
                                     {stat.label}
                                 </p>
                             </div>

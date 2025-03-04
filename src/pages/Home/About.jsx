@@ -34,19 +34,19 @@ const About = () => {
             >
                 {/* Left Side: Image */}
                 <motion.div
-                    className="lg:w-1/2 mb-8 lg:mb-0"
+                    className="w-full lg:w-1/2 mb-8 lg:mb-0 flex justify-center lg:justify-start"
                     variants={imageVariants}
                 >
                     <img
                         src="https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/about-img-2.jpg"
                         alt="About Me"
-                        className="rounded-lg shadow-2xl w-2/3"
+                        className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-full"
                     />
                 </motion.div>
 
                 {/* Right Side: Text Content */}
                 <motion.div
-                    className="lg:w-1/2 lg:pl-12"
+                    className="w-full lg:w-1/2 lg:pl-12"
                     variants={containerVariants}
                 >
                     <motion.h2

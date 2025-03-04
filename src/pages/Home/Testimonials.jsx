@@ -63,36 +63,36 @@ const Testimonials = () => {
     };
 
     return (
-        <div className="bg-gray-50 py-16">
+        <div className="bg-gray-50 py-12 md:py-16">
             <div className="container mx-auto px-4">
                 {/* Testimonials Section */}
-                <div className="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                <div className="flex flex-col lg:flex-row items-center gap-8 mb-12 md:mb-16">
                     {/* Left Side - Testimonial Text */}
                     <motion.div
-                        className="w-full lg:w-1/2"
+                        className="w-full lg:w-1/2 order-2 lg:order-1"
                         variants={testimonialVariants}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                     >
-                        <div className="text-lime-600 text-xl md:text-2xl font-medium mb-2 play-bold">Testimonials</div>
-                        <h2 className="text-4xl md:text-7xl font-bold text-gray-800 mb-8 play-bold">What People Say</h2>
+                        <div className="text-lime-600 text-lg md:text-xl font-medium mb-2 play-bold">Testimonials</div>
+                        <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold text-gray-800 mb-6 md:mb-8 play-bold">What People Say</h2>
 
                         <div className="carousel w-full">
                             {testimonials.map((testimonial, index) => (
                                 <div key={testimonial.id} className={`carousel-item relative w-full ${index === activeTestimonial ? 'block' : 'hidden'}`}>
-                                    <div className="mb-8">
-                                        <div className="text-lime-500 text-4xl">"</div>
-                                        <p className="text-2xl text-gray-600 italic mb-6">{testimonial.quote}</p>
+                                    <div className="mb-6 md:mb-8">
+                                        <div className="text-lime-500 text-3xl md:text-4xl">"</div>
+                                        <p className="text-lg md:text-2xl text-gray-600 italic mb-4 md:mb-6">{testimonial.quote}</p>
                                         <div className="flex items-center">
                                             <img
                                                 src={testimonial.avatar}
                                                 alt={testimonial.author}
-                                                className="w-12 h-12 rounded-full mr-4 object-cover"
+                                                className="w-10 h-10 md:w-12 md:h-12 rounded-full mr-3 md:mr-4 object-cover"
                                             />
                                             <div>
-                                                <h4 className="play-bold font-bold text-gray-800">{testimonial.author},</h4>
-                                                <p className="text-gray-500">{testimonial.company}</p>
+                                                <h4 className="play-bold font-bold text-gray-800 text-base md:text-lg">{testimonial.author},</h4>
+                                                <p className="text-gray-500 text-sm md:text-base">{testimonial.company}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@ const Testimonials = () => {
                         </div>
 
                         {/* Carousel Navigation */}
-                        <div className="flex gap-2 mt-6">
+                        <div className="flex gap-2 mt-4 md:mt-6">
                             {testimonials.map((_, index) => (
                                 <button
                                     key={index}
@@ -116,7 +116,7 @@ const Testimonials = () => {
 
                     {/* Right Side - Testimonial Image */}
                     <motion.div
-                        className="w-full lg:w-1/2"
+                        className="w-full lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0"
                         variants={imageVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -133,19 +133,20 @@ const Testimonials = () => {
                 </div>
 
                 {/* Partners Section */}
-                <div className="py-20 border-t border-gray-200">
-                    <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 md:gap-12">
+                <div className="py-12 md:py-20 border-t border-gray-200">
+                    <div className="flex flex-wrap justify-center lg:justify-between items-center gap-6 md:gap-12">
                         {partners.map((partner) => (
                             <motion.div
                                 key={partner.name}
                                 variants={partnerVariants}
                                 whileHover="hover"
+                                className="flex-shrink-0"
                             >
                                 <Link to="#" className="grayscale-100 opacity-70 hover:opacity-90 hover:grayscale-0 transition-opacity">
                                     <img
                                         src={partner.logo}
                                         alt={partner.name}
-                                        className="h-8 md:h-10"
+                                        className="h-6 md:h-8 lg:h-10"
                                     />
                                 </Link>
                             </motion.div>

@@ -22,7 +22,7 @@ const Banner = () => {
 
     return (
         <div id='home' className="w-full h-screen relative flex items-center">
-            <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center">
+            <div className="w-full flex flex-col lg:flex-row-reverse items-center">
                 {/* Image on the right */}
                 <motion.div
                     className="w-full h-[50vh] lg:h-screen lg:w-1/2 relative overflow-hidden"
@@ -38,7 +38,7 @@ const Banner = () => {
 
                     {/* Social media icons overlaid on the right side of image */}
                     <motion.div
-                        className="absolute top-90 right-8 flex flex-col space-y-2"
+                        className="absolute top-1/2 right-8 transform -translate-y-1/2 flex flex-col space-y-2"
                         variants={socialVariants}
                         initial="hidden"
                         animate="visible"
@@ -67,7 +67,7 @@ const Banner = () => {
                 >
                     <div className="lg:ml-20 xl:ml-60">
                         <motion.h1
-                            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 play-bold leading-none"
+                            className="text-8xl font-bold mb-4 play-bold leading-none"
                             whileHover={{ scale: 1.05 }}
                         >
                             James
@@ -75,7 +75,7 @@ const Banner = () => {
                             Smith
                         </motion.h1>
                         <motion.p
-                            className="text-xl md:text-2xl my-5 md:my-10 max-w-lg mx-auto lg:mx-0 opensans"
+                            className="text-xl md:text-2xl my-5 md:my-10 max-w-md mx-auto lg:mx-0 opensans"
                             whileHover={{ scale: 1.02 }}
                         >
                             Senior Web Developer and designer from heart of New York

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
@@ -10,6 +11,7 @@ const Navbar = () => {
                 top: element.offsetTop - 80, // Adjust for navbar height
                 behavior: "smooth",
             });
+            setIsMobileMenuOpen(false); // Close mobile menu after clicking a link
         }
     };
 
@@ -49,13 +51,28 @@ const Navbar = () => {
 
                     {/* Mobile menu button */}
                     <div className="lg:hidden">
-                        <button className={`transition-colors ${scrolled ? 'text-gray-800' : 'text-white'}`}>
+                        <button 
+                            className={`transition-colors ${scrolled ? 'text-gray-800' : 'text-white'}`}
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </button>
                     </div>
                 </div>
+
+                {/* Mobile Navigation */}
+                {isMobileMenuOpen && (
+                    <div className="lg:hidden mt-4">
+                        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Home</a>
+                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>About</a>
+                        <a href="#works" onClick={(e) => { e.preventDefault(); scrollToSection("works"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Works</a>
+                        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("service"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Service</a>
+                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Contact</a>
+                        <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Blog</a>
+                    </div>
+                )}
             </div>
         </div>
     );

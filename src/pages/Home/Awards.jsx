@@ -49,11 +49,11 @@ const Awards = () => {
     };
 
     return (
-        <section className="bg-green-50/50 py-32 px-60">
+        <section className="bg-green-50/50 py-16 md:py-32 px-4 md:px-8 lg:px-16">
             <div className="container mx-auto">
                 {/* Section header */}
                 <motion.div
-                    className="text-center mb-16 play-bold"
+                    className="text-center mb-8 md:mb-16 play-bold"
                     variants={itemVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -77,7 +77,7 @@ const Awards = () => {
                             variants={itemVariants}
                         >
                             {/* Award item */}
-                            <div className="flex flex-col md:flex-row items-start md:items-center gap-20 py-8">
+                            <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-20 py-8">
                                 {/* Logo */}
                                 <div className="w-40 h-24 flex-shrink-0">
                                     <img
