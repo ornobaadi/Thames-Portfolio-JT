@@ -11,7 +11,7 @@ const BlogCard = ({ image, category, author, comments, title }) => {
             </figure>
             <div className="card-body p-6">
                 <div className="flex flex-wrap gap-4 mb-2 text-sm">
-                    <div className="flex items-center text-green-500">
+                    <div className="flex items-center text-lime-500">
                         <span className="mr-1">
                         <FaFolder />
                         </span>
@@ -35,7 +35,7 @@ const BlogCard = ({ image, category, author, comments, title }) => {
                     </div>
                 </div>
                 <h2 className="card-title text-xl font-bold mb-2">
-                    <Link className="hover:text-green-500 transition-colors">
+                    <Link className="hover:text-lime-500 transition-colors">
                         {title}
                     </Link>
                 </h2>

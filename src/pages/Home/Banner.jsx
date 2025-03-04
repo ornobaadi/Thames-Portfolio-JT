@@ -33,7 +33,7 @@ const Banner = () => {
 
                 {/* Text content on the left */}
                 <div className="w-full lg:w-1/2 text-center lg:text-left px-4 sm:px-8 lg:pl-16 lg:pr-8 py-8 lg:py-0 flex flex-col justify-center">
-                    <div className="lg:ml-20 xl:ml-40">
+                    <div className="lg:ml-20 xl:ml-60">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 play-bold leading-none">
                             James
                             <br />
@@ -43,7 +43,7 @@ const Banner = () => {
                             Senior Web Developer and designer from heart of New York
                         </p>
                         <div>
-                            <button className="btn px-6 md:px-10 bg-green-500 hover:bg-green-600 text-white btn-xl play-bold py-2 md:py-3 rounded-md text-lg md:text-xl">
+                            <button className="btn px-6 md:px-10 bg-lime-500 hover:bg-lime-600 text-white btn-xl play-bold py-2 md:py-3 rounded-md text-lg md:text-xl">
                                 Say Hello
                             </button>
                         </div>

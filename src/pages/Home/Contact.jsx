@@ -66,7 +66,7 @@ const Contact = () => {
         <div id='contact' className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 py-16 px-6">
             <div className="max-w-[1520px] mx-auto">
                 <div className="text-center mb-16">
-                    <Link className="play-bold text-lime-600 text-xl md:text-2xl font-medium hover:text-green-600 transition-colors">
+                    <Link className="play-bold text-lime-500 text-xl md:text-2xl font-medium hover:text-lime-600 transition-colors">
                         Contact Me
                     </Link>
                     <h1 className="play-bold text-6xl lg:text-7xl font-bold text-gray-800 mt-6 mb-12">Let's Start A New Project</h1>
@@ -76,7 +76,7 @@ const Contact = () => {
                     {/* Contact Information */}
                     <div className="md:col-span-1 space-y-10">
                         <div className="flex items-center">
-                            <div className="bg-green-500 rounded-full p-6 mr-6 text-white">
+                            <div className="bg-lime-500 rounded-full p-6 mr-6 text-white">
                                 <FaLocationDot size={40} />
                             </div>
                             <div>
@@ -86,7 +86,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-center">
-                            <div className="bg-green-500 rounded-full p-6 mr-6 text-white">
+                            <div className="bg-lime-500 rounded-full p-6 mr-6 text-white">
                                 <MdOutlineLocalPhone size={40} />
                             </div>
                             <div>
@@ -96,7 +96,7 @@ const Contact = () => {
                         </div>
 
                         <div className="flex items-center">
-                            <div className="bg-green-500 rounded-full p-6 mr-6 text-white">
+                            <div className="bg-lime-500 rounded-full p-6 mr-6 text-white">
                                 <IoMdMail size={40} />
                             </div>
                             <div>
@@ -158,7 +158,7 @@ const Contact = () => {
                                 required
                             ></textarea>
 
-                            <button type="submit" className="play-bold btn bg-green-500 hover:bg-green-600 border-none text-white text-lg px-10 py-4 h-16 rounded-lg">
+                            <button type="submit" className="play-bold btn bg-lime-500 hover:bg-lime-600 border-none text-white text-lg px-10 py-4 h-16 rounded-lg">
                                 Submit Now
                             </button>
                         </form>
