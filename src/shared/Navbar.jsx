@@ -31,7 +31,9 @@ const Navbar = () => {
     }, [scrolled]);
 
     return (
-        <div className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : ''}`}>
+        <div className={`fixed top-0 w-full z-50 transition-all duration-300 
+            ${scrolled ? 'bg-white shadow-md' : 'lg:bg-transparent'}
+            bg-white lg:bg-transparent`}>
             <div className="max-w-[1540px] mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
                     {/* Logo */}
@@ -52,7 +54,7 @@ const Navbar = () => {
                     {/* Mobile menu button */}
                     <div className="lg:hidden">
                         <button 
-                            className={`transition-colors ${scrolled ? 'text-gray-800' : 'text-white'}`}
+                            className="text-black"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,13 +66,13 @@ const Navbar = () => {
 
                 {/* Mobile Navigation */}
                 {isMobileMenuOpen && (
-                    <div className="lg:hidden mt-4">
-                        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Home</a>
-                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>About</a>
-                        <a href="#works" onClick={(e) => { e.preventDefault(); scrollToSection("works"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Works</a>
-                        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("service"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Service</a>
-                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Contact</a>
-                        <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }} className={`block font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'} py-2`}>Blog</a>
+                    <div className="lg:hidden mt-4 bg-white py-4">
+                        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">Home</a>
+                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">About</a>
+                        <a href="#works" onClick={(e) => { e.preventDefault(); scrollToSection("works"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">Works</a>
+                        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("service"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">Service</a>
+                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">Contact</a>
+                        <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }} className="block font-medium text-xl hover:text-lime-600 transition-colors text-black py-2">Blog</a>
                     </div>
                 )}
             </div>
