@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { MonitorIcon, CpuIcon, Code2Icon, ShieldIcon } from 'lucide-react';
 
 const Services = () => {
@@ -29,6 +30,26 @@ const Services = () => {
         }
     ];
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3, // Stagger animations for children
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    const hoverVariants = {
+        hover: { scale: 1.05, transition: { duration: 0.3 } },
+    };
+
     return (
         <div id='service' className="py-16 relative overflow-hidden">
             {/* Background gradient effect */}
@@ -37,17 +58,31 @@ const Services = () => {
 
             <div className="container mx-auto px-4 relative z-10">
                 {/* Section Title */}
-                <div className="text-center mb-16 play-bold">
+                <motion.div
+                    className="text-center mb-16 play-bold"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
                     <p className="text-lime-600 text-xl md:text-2xl mb-2">Service</p>
                     <h2 className="text-4xl md:text-7xl font-bold text-gray-800">What I Do</h2>
-                </div>
+                </motion.div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     {services.map((service) => (
-                        <div
+                        <motion.div
                             key={service.id}
                             className="bg-white rounded-lg p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow"
+                            variants={itemVariants}
+                            whileHover="hover"
                         >
                             <div className="flex-shrink-0">
                                 {service.id === 1 && (
@@ -75,9 +110,9 @@ const Services = () => {
                                 <h3 className="text-3xl font-bold text-gray-800 mb-3 play-bold">{service.title}</h3>
                                 <p className="text-xl text-gray-600">{service.description}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     );

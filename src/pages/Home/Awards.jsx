@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Awards = () => {
     const awards = [
@@ -31,19 +32,50 @@ const Awards = () => {
         }
     ];
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3, // Stagger animations for children
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+    };
+
     return (
         <section className="bg-green-50/50 py-32 px-60">
             <div className="container mx-auto">
                 {/* Section header */}
-                <div className="text-center mb-16 play-bold">
+                <motion.div
+                    className="text-center mb-16 play-bold"
+                    variants={itemVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                >
                     <p className="text-lime-600 mb-2 text-xl lg:text-2xl">Success Stories</p>
                     <h2 className="text-4xl md:text-7xl font-bold text-gray-800">Awards & Achievements</h2>
-                </div>
+                </motion.div>
 
                 {/* Awards list */}
-                <div className="space-y-8">
+                <motion.div
+                    className="space-y-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                >
                     {awards.map((award, index) => (
-                        <div key={index}>
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                        >
                             {/* Award item */}
                             <div className="flex flex-col md:flex-row items-start md:items-center gap-20 py-8">
                                 {/* Logo */}
@@ -77,9 +109,9 @@ const Awards = () => {
                             {index < awards.length - 1 && (
                                 <hr className="border-gray-300" />
                             )}
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const Testimonials = () => {
@@ -46,13 +47,34 @@ const Testimonials = () => {
         { name: "Katerio", logo: "https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/brand-hover-img5.png" }
     ];
 
+    // Animation variants
+    const testimonialVariants = {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    const imageVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    const partnerVariants = {
+        hover: { scale: 1.1, transition: { duration: 0.3 } },
+    };
+
     return (
         <div className="bg-gray-50 py-16">
             <div className="container mx-auto px-4">
                 {/* Testimonials Section */}
                 <div className="flex flex-col lg:flex-row items-center gap-8 mb-16">
                     {/* Left Side - Testimonial Text */}
-                    <div className="w-full lg:w-1/2">
+                    <motion.div
+                        className="w-full lg:w-1/2"
+                        variants={testimonialVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
                         <div className="text-lime-600 text-xl md:text-2xl font-medium mb-2 play-bold">Testimonials</div>
                         <h2 className="text-4xl md:text-7xl font-bold text-gray-800 mb-8 play-bold">What People Say</h2>
 
@@ -90,32 +112,43 @@ const Testimonials = () => {
                                 </button>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right Side - Testimonial Image */}
-                    <div className="w-full lg:w-1/2">
+                    <motion.div
+                        className="w-full lg:w-1/2"
+                        variants={imageVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
                         <div className="relative">
                             <img
                                 src="https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/testimonials-img-1.jpg"
                                 alt="Our happy team"
                                 className="w-full rounded-lg shadow-lg object-cover"
                             />
-                            
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Partners Section */}
                 <div className="py-20 border-t border-gray-200">
                     <div className="flex flex-wrap justify-center lg:justify-between items-center gap-8 md:gap-12">
                         {partners.map((partner) => (
-                            <Link to="#" key={partner.name} className="grayscale-100 opacity-70 hover:opacity-90 hover:grayscale-0 transition-opacity">
-                                <img
-                                    src={partner.logo}
-                                    alt={partner.name}
-                                    className="h-8 md:h-10"
-                                />
-                            </Link>
+                            <motion.div
+                                key={partner.name}
+                                variants={partnerVariants}
+                                whileHover="hover"
+                            >
+                                <Link to="#" className="grayscale-100 opacity-70 hover:opacity-90 hover:grayscale-0 transition-opacity">
+                                    <img
+                                        src={partner.logo}
+                                        alt={partner.name}
+                                        className="h-8 md:h-10"
+                                    />
+                                </Link>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import { Check, X } from "lucide-react";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
     const pricingPlans = [
@@ -41,22 +42,62 @@ const Pricing = () => {
         },
     ];
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3, // Stagger animations for children
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    };
+
+    const hoverVariants = {
+        hover: { scale: 1.05, boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)" },
+    };
+
     return (
         <div className="py-20">
             <div className="text-center play-bold">
-                <h3 className="text-lime-600 text-2xl md:text-3xl font-semibold">
+                <motion.h3
+                    className="text-lime-600 text-2xl md:text-3xl font-semibold"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
                     Let’s Start Working
-                </h3>
-                <h1 className="text-6xl lg:text-7xl font-bold text-gray-800 mt-3">
+                </motion.h3>
+                <motion.h1
+                    className="text-6xl lg:text-7xl font-bold text-gray-800 mt-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                >
                     Pricing Plans
-                </h1>
+                </motion.h1>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-10 mt-12">
+            <motion.div
+                className="flex flex-wrap justify-center gap-10 mt-12"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
                 {pricingPlans.map((plan, index) => (
-                    <div
+                    <motion.div
                         key={index}
                         className="bg-white shadow-lg rounded-2xl p-12 w-96 transition-transform transform hover:-translate-y-3 hover:shadow-2xl duration-300"
+                        variants={itemVariants}
+                        whileHover="hover"
                     >
                         <h2 className="text-2xl font-semibold text-gray-800 play-bold">{plan.title}</h2>
                         <hr className="my-4 border-gray-300" />
@@ -85,9 +126,9 @@ const Pricing = () => {
                         <button className="play-bold mt-8 py-8 w-full btn bg-lime-500 text-white text-lg font-semibold rounded-lg hover:bg-lime-600 transition-all duration-300">
                             Start Now
                         </button>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };
