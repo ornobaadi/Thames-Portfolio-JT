@@ -183,9 +183,7 @@ const Contact = () => {
                             </Popup>
                         </Marker>
                     </MapContainer>
-                    <div className="absolute bottom-2 right-2 z-[1000] text-xs text-gray-600">
-                        <a href="https://leafletjs.com/">Leaflet</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors
-                    </div>
+                    
                 </div>
             </div>
         </div>

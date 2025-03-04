@@ -1,5 +1,7 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+
 import React from 'react';
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { GrInstagram } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -30,17 +32,17 @@ const Footer = () => {
                 <nav>
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
-                        <Link>
-                            <Facebook />
+                        <Link to="https://www.facebook.com/" className="flex items-center justify-center rounded-full w-10 h-10 bg-blue-600 text-white">
+                            <FaFacebookF size={20} />
                         </Link>
-                        <Link>
-                            <Twitter />
+                        <Link to="https://www.x.com/" className="flex items-center justify-center rounded-full w-10 h-10 bg-sky-500 text-white">
+                            <FaTwitter size={20} />
                         </Link>
-                        <Link>
-                            <Linkedin />
+                        <Link to="https://www.linkedin.com/" className="flex items-center justify-center rounded-full w-10 h-10 bg-blue-400 text-white">
+                            <FaLinkedinIn size={20} />
                         </Link>
-                        <Link>
-                            <Instagram />
+                        <Link to="https://www.instagram.com/" className="flex items-center justify-center rounded-full w-10 h-10 bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 text-white">
+                            <GrInstagram size={20} />
                         </Link>
                     </div>
                 </nav>
