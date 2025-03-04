@@ -9,6 +9,8 @@ import Testimonials from './Testimonials';
 import Services from './Services';
 import Blog from './Blog';
 import Experience from './Experience';
+import Pricing from './Pricing';
+import Portfolio from './Portfolio';
 
 const Home = () => {
     return (
@@ -19,8 +21,10 @@ const Home = () => {
             <Awards></Awards>
             <Experience></Experience>
             <Education></Education>
+            <Portfolio></Portfolio>
             <Services></Services>
             <Testimonials></Testimonials>
+            <Pricing></Pricing>
             <Contact></Contact>
             <Blog></Blog>
         </div>

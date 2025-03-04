@@ -30,7 +30,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="py-16 relative overflow-hidden">
+        <div id='service' className="py-16 relative overflow-hidden">
             {/* Background gradient effect */}
             <div className="absolute -left-36 -top-36 w-96 h-96 bg-gradient-to-br from-lime-100 to-teal-100 rounded-full opacity-50 blur-3xl"></div>
             <div className="absolute -right-36 -bottom-36 w-96 h-96 bg-gradient-to-tl from-lime-100 to-sky-100 rounded-full opacity-50 blur-3xl"></div>

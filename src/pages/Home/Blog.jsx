@@ -144,7 +144,7 @@ const Blog = () => {
     };
 
     return (
-        <section className="py-16 px-4 md:px-8 max-w-[1520px] mx-auto">
+        <section id='blog' className="py-16 px-4 md:px-8 max-w-[1520px] mx-auto">
             {/* Header */}
             <div className="mb-12 flex justify-between items-center">
                 <div className='play-bold'>

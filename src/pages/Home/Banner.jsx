@@ -4,7 +4,7 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
 const Banner = () => {
     return (
-        <div className="w-full h-screen relative flex items-center">
+        <div id='home' className="w-full h-screen relative flex items-center">
             <div className="w-full flex flex-col-reverse lg:flex-row-reverse items-center">
                 {/* Image on the right */}
                 <div className="w-full h-[50vh] lg:h-screen lg:w-1/2 relative overflow-hidden">

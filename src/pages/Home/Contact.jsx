@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 import { IoMdMail } from 'react-icons/io';
 import { MdOutlineLocalPhone } from 'react-icons/md';
@@ -13,19 +13,19 @@ import L from 'leaflet';
 // You'll need to import these icon images or use a custom icon
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
 });
 
 // Custom marker icon
 const greenIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
 });
 
 const Contact = () => {
@@ -63,10 +63,10 @@ const Contact = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 py-16 px-6">
+        <div id='contact' className="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50 py-16 px-6">
             <div className="max-w-[1520px] mx-auto">
                 <div className="text-center mb-16">
-                    <Link to="/" className="play-bold text-lime-600 text-xl md:text-2xl font-medium hover:text-green-600 transition-colors">
+                    <Link className="play-bold text-lime-600 text-xl md:text-2xl font-medium hover:text-green-600 transition-colors">
                         Contact Me
                     </Link>
                     <h1 className="play-bold text-6xl lg:text-7xl font-bold text-gray-800 mt-6 mb-12">Let's Start A New Project</h1>
@@ -167,9 +167,9 @@ const Contact = () => {
 
                 {/* Map Section */}
                 <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg border-4 border-white">
-                    <MapContainer 
-                        center={position} 
-                        zoom={13} 
+                    <MapContainer
+                        center={position}
+                        zoom={13}
                         scrollWheelZoom={false}
                         style={{ height: '100%', width: '100%' }}
                     >
@@ -183,7 +183,7 @@ const Contact = () => {
                             </Popup>
                         </Marker>
                     </MapContainer>
-                    
+
                 </div>
             </div>
         </div>
