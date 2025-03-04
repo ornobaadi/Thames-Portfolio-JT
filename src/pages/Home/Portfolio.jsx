@@ -21,7 +21,6 @@ const Portfolio = () => {
         ? projects
         : projects.filter((project) => project.category === selectedCategory);
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {

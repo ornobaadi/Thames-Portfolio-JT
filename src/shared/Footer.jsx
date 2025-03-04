@@ -5,7 +5,6 @@ import { GrInstagram } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {

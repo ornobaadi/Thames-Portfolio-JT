@@ -8,10 +8,10 @@ const Navbar = () => {
         const element = document.getElementById(id);
         if (element) {
             window.scrollTo({
-                top: element.offsetTop - 80, // Adjust for navbar height
+                top: element.offsetTop - 80,
                 behavior: "smooth",
             });
-            setIsMobileMenuOpen(false); // Close mobile menu after clicking a link
+            setIsMobileMenuOpen(false);
         }
     };
 
@@ -33,7 +33,7 @@ const Navbar = () => {
     return (
         <div className={`fixed top-0 w-full z-50 transition-all duration-300 
             ${scrolled ? 'bg-white shadow-md' : 'lg:bg-transparent'}
-            bg-white lg:bg-transparent`}>
+            bg-white`}>
             <div className="max-w-[1540px] mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
                     {/* Logo */}
@@ -43,12 +43,54 @@ const Navbar = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden lg:flex space-x-8 play-bold">
-                        <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Home</a>
-                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>About</a>
-                        <a href="#works" onClick={(e) => { e.preventDefault(); scrollToSection("works"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Works</a>
-                        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("service"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Service</a>
-                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Contact</a>
-                        <a href="#blog" onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }} className={`font-medium text-xl hover:text-lime-600 transition-colors ${scrolled ? 'text-black' : 'text-white'}`}>Blog</a>
+                        <a 
+                            href="#home" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("home"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            Home
+                        </a>
+                        <a 
+                            href="#about" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("about"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            About
+                        </a>
+                        <a 
+                            href="#works" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("works"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            Works
+                        </a>
+                        <a 
+                            href="#services" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("service"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            Service
+                        </a>
+                        <a 
+                            href="#contact" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            Contact
+                        </a>
+                        <a 
+                            href="#blog" 
+                            onClick={(e) => { e.preventDefault(); scrollToSection("blog"); }} 
+                            className={`font-medium text-xl hover:text-lime-600 transition-colors 
+                                ${scrolled ? 'text-black' : 'text-white'}`}
+                        >
+                            Blog
+                        </a>
                     </div>
 
                     {/* Mobile menu button */}

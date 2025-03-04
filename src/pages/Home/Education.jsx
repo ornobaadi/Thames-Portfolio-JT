@@ -6,7 +6,6 @@ import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 const Education = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
 
-    // Education data
     const educationData = [
         {
             degree: "Masters in Computer Science",
@@ -28,13 +27,12 @@ const Education = () => {
         }
     ];
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3, // Stagger animations for children
+                staggerChildren: 0.3,
             },
         },
     };
@@ -44,7 +42,6 @@ const Education = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
     };
 
-    // Handle scroll event to show/hide the button
     useEffect(() => {
         const handleScroll = () => {
             setShowScrollButton(window.scrollY > 600);
@@ -52,7 +49,6 @@ const Education = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        // Initial check
         handleScroll();
 
         return () => {

@@ -38,7 +38,7 @@ const Awards = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3, // Stagger animations for children
+                staggerChildren: 0.3,
             },
         },
     };

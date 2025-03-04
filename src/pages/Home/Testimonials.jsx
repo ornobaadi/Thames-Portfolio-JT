@@ -29,7 +29,6 @@ const Testimonials = () => {
         }
     ];
 
-    // Auto rotation of testimonials
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -38,7 +37,6 @@ const Testimonials = () => {
         return () => clearInterval(interval);
     }, [testimonials.length]);
 
-    // Partner logos
     const partners = [
         { name: "BROG", logo: "https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/brand-hover-img1.png" },
         { name: "Wagner", logo: "https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/brand-hover-img2.png" },
@@ -47,7 +45,6 @@ const Testimonials = () => {
         { name: "Katerio", logo: "https://shthemes.net/demosd/thames/wp-content/uploads/2024/08/brand-hover-img5.png" }
     ];
 
-    // Animation variants
     const testimonialVariants = {
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },

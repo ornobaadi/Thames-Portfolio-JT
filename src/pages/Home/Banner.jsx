@@ -25,7 +25,7 @@ const Banner = () => {
             <div className="w-full flex flex-col lg:flex-row-reverse items-center">
                 {/* Image on the right */}
                 <motion.div
-                    className="w-full h-[50vh] lg:h-screen lg:w-1/2 relative overflow-hidden p-4 lg:p-0"
+                    className="w-full h-[50vh] lg:h-screen lg:w-1/2 relative overflow-hidden px-4 lg:p-0"
                     variants={imageVariants}
                     initial="hidden"
                     animate="visible"

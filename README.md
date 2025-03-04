@@ -1,12 +1,43 @@
-# React + Vite
+# Thames - Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Overview
+Thames is a modern, responsive personal portfolio website showcasing the professional work and skills of James Smith, a senior web developer and designer based in New York. The website provides a comprehensive view of his professional journey, services, and portfolio.
 
-Currently, two official plugins are available:
+## 🌐 Live Demo
+[View Live Site](https://thames-jt.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
+- 📱 Responsive design for mobile and desktop
+- 🏄‍♂️ Smooth scrolling navigation
+- 🎬 Animated page sections
+- 💼 Professional portfolio showcase
+- 📞 Contact and service information
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
+### Frontend
+- React.js
+- Framer Motion (for animations)
+- Tailwind CSS (for styling)
+- DaisyUI 5
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Additional Libraries
+- React Icons
+- Lucide React
+
+### Deployment
+- Firebase Hosting
+
+## 🚀 Getting Started
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+
+## 📂 Project Structure
+- Responsive navbar with dynamic styling
+- Animated banner section
+- Sections for portfolio, services, and contact
+
+---
+
+## 💖 Made with Love
+Developed with ❤️ by [Ornob Aadi](https://github.com/ornobaadi)

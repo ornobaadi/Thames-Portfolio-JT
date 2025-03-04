@@ -44,7 +44,6 @@ const Experience = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
     };
 
-    // Handle scroll event to show/hide the button
     useEffect(() => {
         const handleScroll = () => {
             setShowScrollButton(window.scrollY > 600);
@@ -52,7 +51,6 @@ const Experience = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        // Initial check
         handleScroll();
 
         return () => {

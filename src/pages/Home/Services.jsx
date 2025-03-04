@@ -30,13 +30,12 @@ const Services = () => {
         }
     ];
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3, // Stagger animations for children
+                staggerChildren: 0.3,
             },
         },
     };

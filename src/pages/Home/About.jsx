@@ -8,7 +8,7 @@ const About = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3, // Stagger animations for children
+                staggerChildren: 0.3,
             },
         },
     };
@@ -30,7 +30,7 @@ const About = () => {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }} // Animate only once when in view
+                viewport={{ once: true, amount: 0.5 }} 
             >
                 {/* Left Side: Image */}
                 <motion.div

@@ -8,13 +8,12 @@ const Stats = () => {
         { number: '3K', label: 'Total Projects', suffix: '+' },
     ];
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3, // Stagger animations for children
+                staggerChildren: 0.3,
             },
         },
     };
@@ -31,7 +30,7 @@ const Stats = () => {
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }} // Animate only once when in view
+                viewport={{ once: true, amount: 0.5 }} 
             >
                 <div className="flex flex-col md:flex-row justify-around items-center space-y-6 md:space-y-0 md:space-x-6 lg:space-x-12">
                     {statsData.map((stat, index) => (
